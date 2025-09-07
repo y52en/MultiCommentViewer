@@ -6,6 +6,8 @@ using System;
 using System.Net;
 using System.Threading.Tasks;
 using SitePluginCommon.AutoReconnection;
+using System.Windows;
+
 namespace MirrativSitePlugin
 {
     class MirrativCommentProvider2 : CommentProviderBase
@@ -27,6 +29,7 @@ namespace MirrativSitePlugin
             catch (Exception ex)
             {
                 _logger.LogException(ex, "", $"input={input}");
+                MessageBox.Show(ex.ToString());
             }
             finally
             {
